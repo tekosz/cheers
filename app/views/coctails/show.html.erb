@@ -1,6 +1,7 @@
 <h1><%=h @coctail.name %></h1>
-<p>Dodany <%=@coctail.created_at.strftime("%d-%m-%Y") %> przez <%=h @coctail.user.login %></p>
-
+<link rel="stylesheet" href="style_wydruk.css" media="print">
+<div id="dodany"><p>Dodany <%=@coctail.created_at.strftime("%d-%m-%Y") %> przez <%=h @coctail.user.login %></p>
+</div>
 <% if @coctail.photo.exists? %>
 <p><%= image_tag @coctail.photo.url(:small) %></p>
 <% else %>
@@ -22,9 +23,11 @@
 <h3>Sposób przygotowania:</h3>
 <p><%=h @coctail.recipe %></p>
 
+<div id=reszta>
 <% if @coctail.user == current_user %>
 	<%= link_to "Zmień", edit_coctail_path(@coctail) %>
 	<%= link_to "Usuń", { :action => "destroy", :id => @coctail.id }, :confirm => "Na pewno usunąć drinka?", :method => :delete %>
+
 <% end %>
 
 <br/>
@@ -47,5 +50,10 @@
 		<p>
 			<%= submit_tag 'Oceń' %>
 		</p>
+</div>
+
 	<% end %>
 <% end %>
+  <div id="przyciski">
+<input value="Drukuj" onclick="window.print()" type="button">
+  </div>
