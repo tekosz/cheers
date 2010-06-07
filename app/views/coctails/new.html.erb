@@ -1,4 +1,11 @@
-<h1>Dodaj drinka</h1>
+<% title "Cheerss! - strona główna" %>
+
+<% content_for :head do %>
+<% end %>
+	<section id="main"><!-- #main content area -->
+			<section id="content"><!-- #content -->
+				<article>
+					<h1>Dodaj drinka</h1>
 
 <% form_for(@coctail, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
@@ -60,3 +67,12 @@
     <%= f.submit 'Dodaj' %>
   </p>
 <% end %>
+
+
+				</article>
+						
+						
+			</section><!-- end of #content -->
+
+	</section><!-- end of #main content -->
+

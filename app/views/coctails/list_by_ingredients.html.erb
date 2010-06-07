@@ -1,8 +1,15 @@
-<h1>Drinki zawierające:
+<% title "Cheerss! - strona główna" %>
+
+<% content_for :head do %>
+<% end %>
+	<section id="main"><!-- #main content area -->
+			<section id="content"><!-- #content -->
+				<article>
+					<h1>Drinki zawierające</h1>
 <% @ingredients.each do |ingredient| %>
 	<%=h ingredient.name %>,
 <% end %>
-</h1>
+
 
 <table>
 <% @coctails.each do |coctail| %>
@@ -11,3 +18,11 @@
   </tr>
 <% end %>
 </table>
+
+				</article>
+						
+						
+			</section><!-- end of #content -->
+
+	</section><!-- end of #main content -->
+

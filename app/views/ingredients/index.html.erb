@@ -1,5 +1,11 @@
-<h1>Składniki</h1>
+<% title "Cheerss! - strona główna" %>
 
+<% content_for :head do %>
+<% end %>
+	<section id="main"><!-- #main content area -->
+			<section id="content"><!-- #content -->
+				<article>
+					<h1>Składniki</h1>
 <table>
 
 <% @ingredients.each do |ingredient| %>
@@ -11,4 +17,10 @@
 <div class="pagination">
 <%= will_paginate @ingredient %>
 </div>
+</article>
+						
+						
+			</section><!-- end of #content -->
+
+	</section><!-- end of #main content -->
 

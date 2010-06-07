@@ -1,3 +1,11 @@
+<% title "Cheerss! - strona główna" %>
+
+<% content_for :head do %>
+<% end %>
+	<section id="main"><!-- #main content area -->
+			<section id="content"><!-- #content -->
+				<article>
+
 <h1><%=h @coctail.name %></h1>
 <link rel="stylesheet" href="style_wydruk.css" media="print">
 <div id="dodany"><p>Dodany <%=@coctail.created_at.strftime("%d-%m-%Y") %> przez <%=h @coctail.user.login %></p>
@@ -57,3 +65,12 @@
   <div id="przyciski">
 <input value="Drukuj" onclick="window.print()" type="button">
   </div>
+
+
+				</article>
+						
+						
+			</section><!-- end of #content -->
+
+	</section><!-- end of #main content -->
+
