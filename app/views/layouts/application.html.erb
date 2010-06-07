@@ -1,33 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= yield(:title) || "Cheers!" %></title>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title><%= h(yield(:title) || "Cheers!") %></title>
   <%= javascript_include_tag :defaults %>
-  <%= stylesheet_link_tag('scaffold', :media => :screen) %>
+  <%= stylesheet_link_tag('styles', :media => :screen) %>
   <%= stylesheet_link_tag('style_wydruk', :media => :print) %>
 </head>
 <body>
+	<header><!-- header -->
+<div id="takeatour">
+		<h1><a href="#">Cheers!</a></h1>
+	<li><% if logged_in? %>
+		<%= link_to "Edycja profilu", edit_user_path(current_user.login) %>
+    	<li><%= link_to "Wyloguj", logout_path %>
 
-<div id="menu">
-	<%= link_to 'Start', root_path %>
-	<%= link_to 'Drinki', coctails_path %>
-	<%= link_to 'Składniki', ingredients_path %>
-	<% if logged_in? %>
-		<%= link_to "Dodaj drinka", new_coctail_path %>
-    	<%= link_to "Edycja profilu", edit_user_path(current_user.login) %>
-    	<%= link_to "Wyloguj", logout_path %>
-        <br>
-	Jesteś zalogowany jako <em><%= current_user.login %></em>
   	<% else %>
-    	<%= link_to "Rejestracja", new_user_path %>
-    	<%= link_to "Logowanie", login_path %>
-  	<% end %>
-</div>
+    	<li><%= link_to "Rejestracja", new_user_path %>
+    	<li><%= link_to "Logowanie", login_path %>
 
-<br/>
+  	<% end %>
+  </div>
+
+	</header><!-- end of header -->
+<div id="wrapper"><!-- #wrapper -->
+
+	<nav><!-- top nav -->
+		<div class="menu">
+			<ul>
+	<li><%= link_to 'Start', root_path %>
+	<li><%= link_to 'Drinki', coctails_path %>
+	<li><%= link_to 'Składniki', ingredients_path %>
+	<li><% if logged_in? %>
+		<%= link_to "Dodaj drinka", new_coctail_path %>
+
+<% end %>
+
+			</ul>
+		</div>
+	</nav><!-- end of top nav -->
+	
+	
+</div><!-- #wrapper -->
 
 <% flash.each do |name, msg| %>
 	<%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -36,6 +50,5 @@
 
 
 <%= yield %>
-
 </body>
 </html>

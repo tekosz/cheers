@@ -22,7 +22,7 @@ function add_selected_ingredient(id, name)
 	del_link.setAttribute('class', 'del_ing');
 	del_link.setAttribute('href', '#');
 	del_link.setAttribute('onclick', 'remove_ingredient('+id+')');
-	del_link.innerHTML = 'X';
+	del_link.innerHTML = ' X';
 	new_div.appendChild(del_link);
 	div.appendChild(new_div);
 }

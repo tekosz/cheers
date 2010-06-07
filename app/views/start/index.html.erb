@@ -1,19 +1,60 @@
-<h1>Cheers!</h1>
-<br/>
-<br/>
-<p>jakiś tekst jakiś tekst jakiś tekst jakiś tekst jakiś tekst jakiś tekst jakiś tekst</p>
-<br/>
-<br/>
+<% title "Cheers! - strona główna" %>
+
+<% content_for :head do %>
+<% end %>
+	<section id="main"><!-- #main content area -->
+			<section id="content"><!-- #content -->
+				<article>
+						<section class="benefits leftblock"> 
+							<p><img class="thumbnail" src="images/benefit1.jpg"/><span class="caption"><b>Szukaj drinka</b></span></p>
+<br>
 <% form_tag(:controller => "coctails", :action => "search", :method => "get") do %>
-	<%= label_tag(:q, "Szukaj drinka:") %>
-	<%= text_field_with_auto_complete :coctail, :name, {}, {:method => :get} %>
+<%= text_field_with_auto_complete :coctail, :name, {}, {:method => :get} %>
+<br>
 	<%= submit_tag("Szukaj") %>
 <% end %>
+						</section>
+						<section class="benefits middleblock"> 
+							<p><img class="thumbnail" src="images/benefit2.jpg"/><span class="caption"><b>Szukaj po składnikach</b></span></p>
+<br>
+</p>
 <% form_tag(:controller => "coctails", :action => "search_by_ingredients", :method => "get") do %>
-	<%= label_tag(:q, "Szukaj po składnikach:") %>
 	<%= text_field_with_auto_complete :ingredient, :name, {}, {:method => :get,
 :after_update_element => "function(element,value){add_selected_ingredient(value.id, element.value); element.value='';}"} %>
-	<div id="selected_ing"></div><br>
+<br>
+	<div id="selected_ing"></div>
 	<%= submit_tag("Szukaj") %>
 	<%= hidden_field_tag(:ing_ids, nil, :autocomplete => "off") %> 
 <% end %>
+						</section>
+						
+				</article>
+						<section id="contentbottom">
+        		<article>
+							<h2>Cheers!</h2>
+							<div class="article_columns entirearticle">
+							<p>Cheers! to aplikacja, dzięki której możesz znaleźć przepisy na swoje ulubione drinki. Wpisując pojedyńcze produkty, tworzysz listę składników, z których możesz uzyskać konkretny drink. Jeśli jesteś jedną z osób, która posiada w barku butelke absolutnie wszystkiego, wpisz co masz, a my Ci powiemy co możesz z tego zmixować. Możesz też wpisać nazwę konkretnego drinka lub poszukać czegoś z listy.</p>
+							</div>
+						</article>					
+						</section>
+						
+			</section><!-- end of #content -->
+
+	</section><!-- end of #main content -->
+	
+		<footer>
+		<section id="footer-area">
+
+			<section id="footer-outer-block">
+					<aside class="footer-segment first">
+							<h4>Cheers!</h4>
+<p>&copy; 2010, no i na zdrowie ;)</p>
+					</aside><!-- end of #first footer segment -->
+			</section><!-- end of footer-outer-block -->
+
+		</section><!-- end of footer-area -->
+	</footer>
+	
+
+<!-- Free template created by http://freehtml5templates.com -->
+
