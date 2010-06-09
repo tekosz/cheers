@@ -120,6 +120,7 @@ margin-bottom: 18px;
 
 li {
 padding-left: 1px;
+list-style-type: none;
 }
 
 /* nav */
@@ -163,7 +164,7 @@ text-decoration: none;
 
 nav li a:hover, nav li a.selected, nav li a.selected:hover
 {
-		text-decoration: none;
+		  text-decoration: none;
 		  background: #4B9786;
 		  color: #EEE;
 		  border-color: #2C2C2A;
@@ -201,7 +202,7 @@ header li
 /** ARTICLES **/
 
 article {
-padding: 20px 30px 5px 40px;
+padding: 20px 30px 20px 40px;
 }
 
 #contentbottom {
@@ -335,8 +336,9 @@ width: 190px;
 }
 
 .first {
-margin-right: 20px;
-margin-left: 40px;
+float: left;
+margin-top: 22px;
+margin-left: 20px;
 }
 
 footer aside h4 {

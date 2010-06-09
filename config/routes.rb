@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :coctails
   map.resources :ingredients
   map.resources :ingredients, :has_many => :coctails
-  
+  map.about 'about', :controller => 'about', :action => 'index'
   map.root :controller => 'start'
   
   map.login "login", :controller => "user_sessions", :action => "new"
