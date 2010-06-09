@@ -1,5 +1,10 @@
 <% title "Cheers! - edytuj użytkownika" %>
 
+<% content_for :head do %>
+<% end %>
+	<section id="main"><!-- #main content area -->
+			<section id="content"><!-- #content -->
+				<article>
 <h1>Zmiana danych użytkownika</h1>
 
 <% form_for(@user) do |f| %>
@@ -25,3 +30,10 @@
     <%= f.submit 'Zmień' %>
   </p>
 <% end %>
+</article>
+						
+						
+			</section><!-- end of #content -->
+
+	</section><!-- end of #main content -->
+

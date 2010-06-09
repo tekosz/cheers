@@ -7,22 +7,21 @@
 				<article>
 						<section class="benefits leftblock"> 
 							<p><img class="thumbnail" src="images/benefit1.jpg"/><span class="caption"><b>Szukaj drinka</b></span></p>
-<br>
 <% form_tag(:controller => "coctails", :action => "search", :method => "get") do %>
-<%= text_field_with_auto_complete :coctail, :name, {}, {:method => :get} %>
-<br>
-	<%= submit_tag("Szukaj") %>
+<%= text_field_with_auto_complete :coctail, :name, {:size => 28}, {:method => :get} %>
+<br><br>
+<%= submit_tag("Szukaj") %>
 <% end %>
 						</section>
 						<section class="benefits middleblock"> 
 							<p><img class="thumbnail" src="images/benefit2.jpg"/><span class="caption"><b>Szukaj po składnikach</b></span></p>
-<br>
 </p>
 <% form_tag(:controller => "coctails", :action => "search_by_ingredients", :method => "get") do %>
-	<%= text_field_with_auto_complete :ingredient, :name, {}, {:method => :get,
+	<%= text_field_with_auto_complete :ingredient, :name, {:size => 28}, {:method => :get,
 :after_update_element => "function(element,value){add_selected_ingredient(value.id, element.value); element.value='';}"} %>
-<br>
+
 	<div id="selected_ing"></div>
+<br>
 	<%= submit_tag("Szukaj") %>
 	<%= hidden_field_tag(:ing_ids, nil, :autocomplete => "off") %> 
 <% end %>
