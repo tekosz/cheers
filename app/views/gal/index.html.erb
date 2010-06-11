@@ -1,27 +1,12 @@
-<% title "Cheers! - drinki" %>
-
-<% content_for :head do %>
-<% end %>
+<% title "Cheers - autorzy" %>
 	<section id="main"><!-- #main content area -->
 			<section id="content"><!-- #content -->
 				<article>
-					<h1>Drinki</h1>
+<h1> Autorzy Projektu </h1>
 
-<table>
-<% @coctails.each do |coctail| %>
-  <tr>
-    <td><%= link_to "#{coctail.name}", coctail %></td>
-	<td>Średnia ocena: <%= coctail.ratings.average('rating') %></td>
-  </tr>
-<% end %>
-</table>
+</article>
 
-<%= will_paginate @coctail %>
-
-
-				</article>
-						
-						
+			
 			</section><!-- end of #content -->
 
 	</section><!-- end of #main content -->
@@ -37,9 +22,5 @@
 
 		</section><!-- end of footer-area -->
 	</footer>
-
-
-
-
 
 

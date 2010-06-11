@@ -20,6 +20,7 @@
     	<li><%= link_to "Logowanie", login_path %>
 
   	<% end %>
+
   </div>
 
 	</header><!-- end of header -->
@@ -29,8 +30,8 @@
 		<div class="menu">
 			<ul>
 	<li><%= link_to 'Start', root_path %>
-	<li><%= link_to 'Drinki', coctails_path %>
 	<li><%= link_to 'Składniki', ingredients_path %>
+	<li><%= link_to 'Drinki', coctails_path %>
 	<li><% if logged_in? %>
 		<%= link_to "Dodaj drinka", new_coctail_path %>
 
@@ -41,13 +42,20 @@
 		</div>
 	</nav><!-- end of top nav -->
 	
-	
 </div><!-- #wrapper -->
-
-<% flash.each do |name, msg| %>
+	<section id="main"><!-- #main content area -->
+			<section id="content"><!-- #content -->
+			<section id="ocena"><!-- #content -->
+				<article>
+	<% flash.each do |name, msg| %>
 	<%= content_tag :div, msg, :id => "flash_#{name}" %>
-
 <% end %>
+						</article>					
+
+</section>
+			</section><!-- end of #content -->
+
+	</section><!-- end of #main content -->
 
 
 <%= yield %>

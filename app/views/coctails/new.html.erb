@@ -11,10 +11,10 @@
   <%= f.error_messages %>
 
   <div>
-    <%= f.label 'Nazwa:' %><br />
-    <%= f.text_field :name %><br />
-	
+    <%= f.label 'Nazwa:' %><br>
+    <%= f.text_field :name %>	
 	<div>
+<br>
 	    <p><%= f.label 'Składniki:' %></p>
 	    <table>
 	        <tr>
@@ -55,9 +55,11 @@
 		</table>
 	</div>
 	<div>
-		<%= f.label 'Sposób przygotowania:' %><br />
+<br>
+		<%= f.label 'Sposób przygotowania:' %><br>
 	    <%= f.text_area :recipe, :size => "50x10" %>
 		<p>
+<br>
 		  	<%= f.label 'Zdjęcie' %><br />
 		  	<%= f.file_field :photo %>
 		</p>
@@ -75,4 +77,16 @@
 			</section><!-- end of #content -->
 
 	</section><!-- end of #main content -->
+
+<footer>
+		<section id="footer-area">
+
+			<section id="footer-outer-block">
+					<aside class="footer-segment first">
+<p> &copy; Cheers! 2010</p>
+					</aside><!-- end of #first footer segment -->
+			</section><!-- end of footer-outer-block -->
+
+		</section><!-- end of footer-area -->
+	</footer>
 
